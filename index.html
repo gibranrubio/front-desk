@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Founder Line — We make Digital Founders.</title>
+<title>Ricky — We make Digital Founders.</title>
 <meta name="description" content="We help packaging companies use AI to answer the calls that come in when nobody's at the desk.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,18 +132,69 @@
     .col{max-width:600px;}
     .hero h1{font-size:46px;}
   }
+
+  /* ============ DESKTOP LAYOUT ============ */
+  .col-wide{max-width:520px;margin:0 auto;padding:0 24px;}
+
+  @media (min-width:900px){
+    .col{max-width:680px;}
+    .col-wide{max-width:1080px;}
+
+    .top-bar-inner{padding:26px 0;}
+    .logo{font-size:19px;}
+
+    .hero{padding:96px 0 70px;}
+    .hero .col{max-width:1080px;}
+    .hero-inner{display:flex;align-items:center;justify-content:space-between;gap:60px;}
+    .hero-copy{max-width:520px;flex-shrink:0;}
+    .hero h1{font-size:64px;}
+    .hero p.sub{font-size:18px;max-width:440px;}
+    .hero-gem{position:static;width:220px;height:220px;border-radius:32px;transform:rotate(8deg);flex-shrink:0;}
+    .down-arrow{margin:52px 0 0;}
+
+    section{padding:88px 0;}
+    .eyebrow{font-size:12px;margin-bottom:36px;}
+
+    .why-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .why-card{padding:28px;}
+
+    .story .col{max-width:720px;}
+    .story h2{font-size:38px;max-width:640px;}
+    .story p.body{font-size:17px;max-width:600px;}
+    .story .punch{font-size:17px;}
+
+    .moment{display:flex;gap:24px;align-items:baseline;max-width:720px;}
+    .moment .ts{flex-shrink:0;width:150px;}
+    .moment p{margin-top:0;font-size:15.5px;}
+
+    .auto-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+
+    .step{max-width:none;}
+    .steps-row{display:flex;gap:48px;text-align:left;}
+    .steps-row .step{flex:1;margin-bottom:0;text-align:left;}
+    .steps-row .step p{margin:0;max-width:none;}
+
+    .foot-cta{padding:100px 0 90px;}
+  }
+
+  @media (min-width:1280px){
+    .col-wide{max-width:1200px;}
+    .hero .col{max-width:1200px;}
+    .why-cards{gap:22px;}
+    .auto-list{gap:16px;}
+  }
 </style>
 </head>
 <body>
 
 <div class="top-bar">
   <div class="col top-bar-inner">
-    <div class="logo">Founder Line</div>
+    <div class="logo">Ricky</div>
     <div class="status-clock">
       <div class="clock-time" id="liveClock">00:00:00</div>
       <div class="status-label">Always Working</div>
     </div>
-    <a href="#cta" class="talk-btn" aria-label="Contact The Founder Line">
+    <a href="#cta" class="talk-btn" aria-label="Contact Ricky">
       <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
     </a>
   </div>
@@ -151,17 +202,21 @@
 
 <header class="hero">
   <div class="col">
-    <h1>We make Digital<br>Founders.</h1>
-    <p class="sub">We help packaging companies use AI to answer the calls that come in when nobody's at the desk — pricing, stock, and rush orders, handled like the founder would.</p>
-    <div class="down-arrow">
-      <svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>We are here to<br>answer calls when<br>you can't.</h1>
+        <p class="sub">We help packaging companies use AI to answer the calls that come in when nobody's at the desk — pricing, stock, and rush orders, handled like the founder would.</p>
+        <div class="down-arrow">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="hero-gem"></div>
     </div>
-    <div class="hero-gem"></div>
   </div>
 </header>
 
 <section class="dotted">
-  <div class="col">
+  <div class="col col-wide">
     <span class="eyebrow">Why build a digital founder?</span>
     <div class="why-cards">
       <div class="why-card">
@@ -234,7 +289,7 @@
 </section>
 
 <section class="dotted">
-  <div class="col">
+  <div class="col col-wide">
     <span class="eyebrow">What we automate</span>
     <div class="auto-list">
       <div class="auto-item"><span class="emo">📦</span>Sales Calls — Answer, quote, and log every one.</div>
@@ -251,22 +306,24 @@
 </section>
 
 <section class="dotted">
-  <div class="col" style="text-align:center;">
+  <div class="col col-wide" style="text-align:center;">
     <span class="eyebrow">How it works</span>
-    <div class="step">
-      <div class="num">1</div>
-      <h3>Deep dive</h3>
-      <p>We spend time with you learning your pricing, SOPs, and stock system.</p>
-    </div>
-    <div class="step">
-      <div class="num">2</div>
-      <h3>Build and train</h3>
-      <p>We train your digital founder on your real pricing sheets and real calls.</p>
-    </div>
-    <div class="step">
-      <div class="num">3</div>
-      <h3>You stop missing calls</h3>
-      <p>That's it. That's the whole thing.</p>
+    <div class="steps-row">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Deep dive</h3>
+        <p>We spend time with you learning your pricing, SOPs, and stock system.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Build and train</h3>
+        <p>We train your digital founder on your real pricing sheets and real calls.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>You stop missing calls</h3>
+        <p>That's it. That's the whole thing.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -277,7 +334,7 @@
       Get started
       <span class="arrow-circle"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
     </a>
-    <p class="foot-email mono">hello@thefounderline.co</p>
+    <p class="foot-email mono">hello@ricky.co</p>
   </div>
 </section>
 
