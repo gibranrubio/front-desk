@@ -183,6 +183,52 @@
     .why-cards{gap:22px;}
     .auto-list{gap:16px;}
   }
+
+  /* ============ BENEFIT BAR ============ */
+  .benefit-bar{display:flex;flex-direction:column;gap:14px;}
+  .benefit-item{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px;display:flex;align-items:center;gap:16px;
+  }
+  .benefit-icon{width:30px;height:30px;flex-shrink:0;}
+  .benefit-icon svg{width:100%;height:100%;stroke:var(--blue);fill:none;stroke-width:1.8;}
+  .benefit-item .b-num{font-size:19px;font-weight:800;letter-spacing:-0.01em;}
+  .benefit-item .b-label{font-size:13.5px;color:var(--ink-soft);margin-top:2px;}
+  @media (min-width:900px){ .benefit-bar{flex-direction:row;} .benefit-item{flex:1;flex-direction:column;align-items:flex-start;text-align:left;} }
+
+  /* ============ PLACEHOLDER (unverified stat/testimonial) ============ */
+  .placeholder-box{
+    border:1.5px dashed rgba(19,18,16,0.3);border-radius:16px;
+    padding:22px;background:rgba(19,18,16,0.02);
+  }
+  .placeholder-box .ptag{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;
+    letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);margin-bottom:10px;display:block;
+  }
+  .placeholder-box p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);}
+  .placeholder-box .attrib{margin-top:10px;font-weight:600;color:var(--ink);font-size:13.5px;}
+
+  /* ============ CASE SNAPSHOT ============ */
+  .snapshot-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+  .snapshot-col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .snapshot-col h4{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;}
+  .snapshot-col .row{font-size:13px;color:var(--ink-soft);margin-bottom:5px;}
+
+  /* ============ GUARANTEE ============ */
+  .guarantee{
+    background:var(--ink);color:var(--paper);border-radius:18px;padding:28px 24px;text-align:center;
+  }
+  .guarantee p{font-size:15.5px;line-height:1.6;}
+  .guarantee strong{font-weight:800;}
+
+  /* ============ PILL BUTTONS ============ */
+  .pill-btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--ink);color:var(--paper);font-weight:600;font-size:15px;
+    padding:15px 28px;border-radius:999px;
+  }
+  .secondary-line{margin-top:18px;font-size:14px;color:var(--ink-soft);}
+  .secondary-line a{color:var(--blue);font-weight:600;}
 </style>
 </head>
 <body>
@@ -204,8 +250,8 @@
   <div class="col">
     <div class="hero-inner">
       <div class="hero-copy">
-        <h1>We are here to<br>answer calls when<br>you can't.</h1>
-        <p class="sub">We help packaging companies use AI to answer the calls that come in when nobody's at the desk — pricing, stock, and rush orders, handled like the founder would.</p>
+        <h1>Never miss<br>another packaging<br>order.</h1>
+        <p class="sub">Ricky answers every call, quotes on the spot, and books the sale while you sleep. Made for packaging manufacturers &amp; distributors that refuse to lose business to voicemail.</p>
         <div class="down-arrow">
           <svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg>
         </div>
@@ -217,90 +263,99 @@
 
 <section class="dotted">
   <div class="col col-wide">
-    <span class="eyebrow">Why build a digital founder?</span>
-    <div class="why-cards">
-      <div class="why-card">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <h3>Hours saved weekly</h3>
-        <p>Every rep gets time back to focus on the calls that need a human.</p>
+    <div class="benefit-bar">
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></div>
+        <div>
+          <div class="b-num">24/7 Live Coverage</div>
+          <div class="b-label">Nights, weekends, holidays.</div>
+        </div>
       </div>
-      <div class="why-card">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></div>
-        <h3>Always working</h3>
-        <p>Handles calls 24/7, including nights, weekends, and holidays.</p>
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <div>
+          <div class="b-num">0 Missed Calls</div>
+          <div class="b-label">Built to capture every inbound call.</div>
+        </div>
       </div>
-      <div class="why-card">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
-        <h3>Fewer interruptions</h3>
-        <p>More time for quoting, sourcing, and running the business.</p>
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div>
+          <div class="b-num">Hours Back Per Rep</div>
+          <div class="b-label">Time returned to quoting and sourcing.</div>
+        </div>
       </div>
-      <div class="why-card">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg></div>
-        <h3>Happier employees</h3>
-        <p>Save your team from repetitive call-answering. Let them work on what matters.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5.7 2.5 2c0 1.6-2.5 1.8-2.5 3.5M9.5 14.5c0 1.4 1.1 2.5 2.5 2.5"/></svg></div>
-        <h3>Better economics</h3>
-        <p>A digital founder costs less than overtime and turnover. Better ROI, lower churn.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
-        <h3>Instant scale</h3>
-        <p>Add call capacity instantly without hiring delays. Scale up or down as needed.</p>
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 7v10M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5.7 2.5 2c0 1.6-2.5 1.8-2.5 3.5M9.5 14.5c0 1.4 1.1 2.5 2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div>
+          <div class="b-num">Costs Less Than Overtime</div>
+          <div class="b-label">One missed shift can cover the bill.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="story">
+<section>
   <div class="col">
-    <h2>Mike from Sales called back 14 missed calls every Monday.</h2>
-    <p class="body">He'd get in early, pull up the weekend voicemail box, and start working through it one by one. Most callers had already ordered from someone else by the time he reached them. The ones still interested had to explain their question twice.</p>
-    <p class="punch">Now? Zero missed calls. Every one answered live, the night it comes in.</p>
+    <span class="eyebrow">What customers are saying</span>
+    <div class="placeholder-box">
+      <span class="ptag">Placeholder — swap in a real testimonial once you have one</span>
+      <p>"Since installing Ricky, we recover an average of [X] weekend orders a month and my reps have reclaimed [X] hours a week."</p>
+      <div class="attrib">— [Name], [Title], [Company]</div>
+    </div>
   </div>
 </section>
 
 <section class="dotted">
   <div class="col">
-    <h2 style="font-size:27px;margin-bottom:26px;">Your front desk right now</h2>
-    <div class="moment">
-      <div class="ts">11:47pm, Saturday</div>
-      <p>A distributor asks if 1lb mylar bags are in stock. No one's there. Straight to voicemail.</p>
+    <span class="eyebrow">Case snapshot</span>
+    <div class="placeholder-box">
+      <span class="ptag">Placeholder — swap in real before/after numbers once you have a customer</span>
+      <div class="snapshot-grid">
+        <div class="snapshot-col">
+          <h4>Before Ricky</h4>
+          <div class="row">[X] missed weekend calls</div>
+          <div class="row">[X]% lost to competitors</div>
+        </div>
+        <div class="snapshot-col">
+          <h4>After Ricky</h4>
+          <div class="row">[X] missed calls</div>
+          <div class="row">[X]% closed, $[X] new monthly revenue</div>
+        </div>
+      </div>
     </div>
-    <div class="moment">
-      <div class="ts">2:15pm, Sunday</div>
-      <p>A dispensary needs rush exit bags before Monday's opening. Voicemail again.</p>
-    </div>
-    <div class="moment">
-      <div class="ts">9:03pm, Tuesday</div>
-      <p>A buyer asks for pop-top jar tier pricing. Third time this month it's gone unanswered.</p>
-    </div>
-    <p class="punch blue">They're not losing customers on purpose. The phone just isn't answered.</p>
   </div>
 </section>
 
-<section class="story">
+<section class="dotted">
   <div class="col">
-    <h2>Your founder built this business. Now they're the only one who can quote a price at 9pm.</h2>
-    <p class="body">A founder spending hours a week fielding calls that just need pricing, stock, or a bulk quote — questions any trained rep could answer, if one were on the line.</p>
-    <p class="punch">That's founder time spent doing front-desk work. Every week.</p>
+    <h2 style="font-size:27px;margin-bottom:26px;">If you can't answer, your competitor will.</h2>
+    <div class="moment">
+      <div class="ts">11:47pm, Saturday</div>
+      <p>A distributor checks stock on 1-lb Mylar bags. Your voicemail answers.</p>
+    </div>
+    <div class="moment">
+      <div class="ts">2:15pm, Sunday</div>
+      <p>A dispensary needs exit bags for Monday's launch. Voicemail again.</p>
+    </div>
+    <div class="moment">
+      <div class="ts">9:03pm, Tuesday</div>
+      <p>A buyer wants tier pricing on pop-top jars. No answer — the order goes elsewhere.</p>
+    </div>
+    <p class="punch blue">If you can't answer, your competitor will.</p>
   </div>
 </section>
 
 <section class="dotted">
   <div class="col col-wide">
-    <span class="eyebrow">What we automate</span>
+    <span class="eyebrow">What Ricky does</span>
     <div class="auto-list">
-      <div class="auto-item"><span class="emo">📦</span>Sales Calls — Answer, quote, and log every one.</div>
-      <div class="auto-item"><span class="emo">💰</span>Pricing Quotes — Bulk tiers, quoted correctly.</div>
-      <div class="auto-item"><span class="emo">📊</span>Stock Checks — Real-time, never a guess.</div>
-      <div class="auto-item"><span class="emo">🚚</span>Rush Orders — Flagged and routed fast.</div>
-      <div class="auto-item"><span class="emo">🎧</span>Customer Service — Answer FAQs, route the rest.</div>
-      <div class="auto-item"><span class="emo">📞</span>Order Follow-up — No caller waits two days.</div>
-      <div class="auto-item"><span class="emo">✉️</span>Email Management — Draft replies, sort the inbox.</div>
-      <div class="auto-item"><span class="emo">🧾</span>Invoicing — Send it the same night, not next week.</div>
-      <div class="auto-item"><span class="emo">📋</span>Documentation — Call notes, logged automatically.</div>
+      <div class="auto-item"><span class="emo">🗣️</span>Answers &amp; qualifies every inbound call in natural language.</div>
+      <div class="auto-item"><span class="emo">📊</span>Pulls real-time inventory and pricing from your ERP.</div>
+      <div class="auto-item"><span class="emo">🧾</span>Generates bulk quotes and emails them in-call.</div>
+      <div class="auto-item"><span class="emo">🚚</span>Flags rush orders to the on-call lead.</div>
+      <div class="auto-item"><span class="emo">📋</span>Logs notes straight into HubSpot / Salesforce.</div>
     </div>
   </div>
 </section>
@@ -311,19 +366,27 @@
     <div class="steps-row">
       <div class="step">
         <div class="num">1</div>
-        <h3>Deep dive</h3>
-        <p>We spend time with you learning your pricing, SOPs, and stock system.</p>
+        <h3>Deep-Dive (1 day)</h3>
+        <p>We learn your pricing, SOPs, and stock system.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
-        <h3>Build and train</h3>
-        <p>We train your digital founder on your real pricing sheets and real calls.</p>
+        <h3>Build &amp; Train (1 week)</h3>
+        <p>Ricky practices on your real calls and quotes.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
-        <h3>You stop missing calls</h3>
-        <p>That's it. That's the whole thing.</p>
+        <h3>Go Live (Day 8)</h3>
+        <p>You stop missing calls. That's the whole thing.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <div class="guarantee">
+      <p>Try Ricky for 30 days. If you're not capturing at least <strong>95% of calls</strong>, you pay nothing.</p>
     </div>
   </div>
 </section>
@@ -331,10 +394,15 @@
 <section id="cta" class="foot-cta dotted">
   <div class="col">
     <a href="#" class="get-started">
-      Get started
+      Schedule My Demo
       <span class="arrow-circle"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
     </a>
-    <p class="foot-email mono">hello@ricky.co</p>
+    <p class="secondary-line">Prefer email? Write to <a href="mailto:hello@ricky.co">hello@ricky.co</a> — we reply in under an hour.</p>
+    <div class="placeholder-box" style="margin-top:36px;text-align:left;">
+      <span class="ptag">Placeholder — swap in real numbers once you have customer data</span>
+      <p>Ricky clients reclaim an average of [X] hours of founder time per month and reduce overtime spend by [X]%.</p>
+      <p style="margin-top:8px;font-weight:600;color:var(--ink);">Ready to get your nights and weekends back?</p>
+    </div>
   </div>
 </section>
 
